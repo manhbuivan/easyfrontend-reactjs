@@ -1,10 +1,14 @@
-import './App.css';
-import TodoFeature from './features';
+import "./App.css";
+import AlbumFeature from "./features/AlbumFeature";
+import ColorBox from "./features/ColorBox";
 
 function App() {
   return (
     <div className="App">
-      <TodoFeature/>
+      {
+        <AlbumFeature />
+      }
+      {<ColorBox />}
     </div>
   );
 }
