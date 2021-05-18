@@ -5,9 +5,7 @@ import ColorBox from "./features/ColorBox";
 function App() {
   return (
     <div className="App">
-      {
-        <AlbumFeature />
-      }
+      {<AlbumFeature />}
       {<ColorBox />}
     </div>
   );
