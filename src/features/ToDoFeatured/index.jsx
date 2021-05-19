@@ -27,6 +27,8 @@ function TodoFeature(props) {
 
     
     const [todoList, settodoList] = useState(inittodoList);
+    const [showListTodo, setshowListTodo] = useState('new')
+
 
     const handleTodoClick = (todo, idx) => {
         // tao mang moi de luu mang tao ra vao
@@ -42,12 +44,27 @@ function TodoFeature(props) {
     }
 
 
+    const handledShowAllClick = () => {
+        setshowListTodo('all');
+    }
+    const handledShowNewClick = () => {
+        setshowListTodo('new');
+    }
+    const handledShowCompletedClick = () => {
+        setshowListTodo('completed');
+    }
+
+    const renderListTodo = todoList.filter(todo => showListTodo === 'all' || showListTodo === todo.status)
 
 
     return (
         <div>
-            <h2> hello</h2>
-            <TodoList todoList = {todoList} onTodoClick={handleTodoClick}/>
+            <h2> Hello, I'm Mạnh đẹp trai</h2>
+            <TodoList todoList = {renderListTodo} onTodoClick={handleTodoClick}/>
+
+            <button onClick={handledShowAllClick}>Show All</button>
+            <button onClick={handledShowNewClick}>Show New</button>
+            <button onClick={handledShowCompletedClick}>Show Completed</button>
         </div>
     );
 }
