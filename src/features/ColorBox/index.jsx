@@ -15,7 +15,7 @@ function ColorBox() {
             <button onClick={() => {setName("Thế Anh")}}>Rename2</button>
             <div>
                 {count}
-                <button onClick={() => {setCount(x => x+1)}}> Tawng</button>
+                <button onClick={() => {setCount(x => x+1)}}> Increase</button>
             </div>
         </div>
     );
