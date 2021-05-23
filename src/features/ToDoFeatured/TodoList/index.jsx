@@ -13,7 +13,7 @@ TodoList.defaultProps = {
 
 function TodoList({todoList, onTodoClick}) {
 
-    const handleTodoClick = (todo, idx) => {
+    const handleClick = (todo, idx) => {
         if(!onTodoClick) return;
           
         onTodoClick(todo, idx);
@@ -31,7 +31,7 @@ function TodoList({todoList, onTodoClick}) {
                         'todo-item' : true,
                         completed : todo.status === 'completed'
                     })}
-                    onClick={() => handleTodoClick(todo, idx )}
+                    onClick={() => handleClick(todo, idx)}
                     >
                        {todo.action}
                    </li>

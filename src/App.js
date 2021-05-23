@@ -10,7 +10,7 @@ function App() {
       {/* {<AlbumFeature />}
       {<ColorBox />}
       <TodoFeature /> */}
-      <ListProduct/>
+      <ListProduct />
     </div>
   );
 }

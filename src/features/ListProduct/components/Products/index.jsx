@@ -6,15 +6,20 @@ Products.propTypes = {
     
 };
 
-function Products({listProduct}) {
 
-
+// day la thang con
+function Products({listProduct, onTodoClick}) {
+    const handleItemClick = (descProductId) => {
+        if(!onTodoClick) return;
+        onTodoClick(descProductId);
+    };
     return (
         <div>
             <ul className="show-list">
                 {listProduct.map(listItem => (
-                    <li key={listItem.id}>
-                        <InfoProducts descProduct = {listItem}/>
+                    <li key={listItem.id}
+                    >
+                        <InfoProducts onItemClick={handleItemClick} descProduct = {listItem}/>                        
                     </li>
                 ))}
             </ul>

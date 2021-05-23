@@ -11,17 +11,20 @@ function TodoFeature(props) {
         {
             id : 1,
             action : "Ăn",
-            status : "new"
+            status : "new",
+            name : "Vi"
         },
         {
             id : 2,
             action : "Chơi",
-            status : "completed"
+            status : "completed",
+            name : "Manh"
         },
         {
             id : 3,
             action : "Ngủ",
-            status : "new"
+            status : "new",
+            name : "Vi"
         },
     ]
 

@@ -6,7 +6,17 @@ InfoProducts.propTypes = {
     
 };
 
-function InfoProducts({descProduct}) {
+
+// day la thang chau 
+
+// minh muon truyen id len thang cha de xu li theo id nhung chua biet truyen kieu gi, ok để mình thử
+function InfoProducts({descProduct, onItemClick}) {
+    const handleProductClick = () => {
+        if(!onItemClick) return;
+
+        onItemClick(descProduct.id)
+    }
+
     return (
         <div>
             <div className="img-products">
@@ -15,7 +25,7 @@ function InfoProducts({descProduct}) {
             <div className="desc">
                 <h3>{descProduct.name}</h3>
                 <p>{descProduct.price}</p>
-                <button>Đặt hàng</button>
+                <button onClick={() => handleProductClick()}>{descProduct.status}</button>
             </div>
         </div>
     );
