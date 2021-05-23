@@ -53,6 +53,7 @@ function ListProduct(props) {
     },
   ];
   const [listProduct, setlistProduct] = useState(initlistProduct);
+  const [filterProduct, setfilterProduct] = useState('all')
 
   const handleTodoClick = (id) => {
     const newList = [...listProduct];
@@ -93,14 +94,30 @@ function ListProduct(props) {
     //     // button : newList[id].button === "Đặt hàng" ? "Đã chọn" : "Đặt hàng",
     // }
 
-    setlistProduct(newList);
+    setlistProduct(newList);    
   };
+
+    const handleShowAllProduct = () => {
+        setfilterProduct('all')
+    }
+    const HạVi = () => {
+        setfilterProduct("Đã chọn")
+    }
+    const handleShowLoseProduct = () => {
+        setfilterProduct("Đặt hàng")
+    }
+
+    const renderProduct = listProduct.filter(product => filterProduct === 'all' || filterProduct === product.status);
 
   return (
     <div>
       <div className="{list-product}">
         <h1 style={{ textAlign: "center" }}>List sản phẩm mới nhất </h1>
-        <Products listProduct={listProduct} onTodoClick={handleTodoClick} />
+        <Products listProduct={renderProduct} onTodoClick={handleTodoClick} />
+
+        <button onClick={handleShowAllProduct}>Tất cả sản phẩm</button>
+        <button onClick={HạVi}>Sản phẩm đã chọn</button>
+        <button onClick={handleShowLoseProduct}>Sản phẩm chưa chọn</button>
       </div>
     </div>
   );
