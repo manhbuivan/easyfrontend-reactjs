@@ -57,12 +57,7 @@ function ListProduct(props) {
 
   const handleTodoClick = (id) => {
     const newList = [...listProduct];
-    // sao lại dùng id chỗ này, mình dang dùng id chứ kh4ng phải index
-    // à ừ nhỉ cũng đúng
-    // thay button thành status 0úng nghĩa hưn
-    // ok, ông update lại xem
     const a = newList
-    //   .filter((x) => x.id === id)
       .filter(function(list){
           return list.id === id;
       });
@@ -70,37 +65,13 @@ function ListProduct(props) {
         (x) => (x.status = (x.status === "Đặt hàng") ? "Đã chọn" : "Đặt hàng")
       )
 
-
-      // xóa đống dưới đi. viết theo kiểu tui là anh Hậu hướng dẫn á
-      // oke cứ để đấy có gì đọc lại
-    /// lọc ra thèn Product nào có id mà thèn con gửi l3n, hiểu này hông // sao cứ phải có 2 cái  x.status nhỉ
-        // à à oke
-    // hiểu chỗ ffilter chưa // rồi // còn dòng tiếp theo
-    // tại vì dùng filter nên nỏ return về 1 array, mà array có 1 phần tử àk
-    // vì id là duy nhất
-    // newItems[0].status = newItems[0].status === "Đặt hàng" ? "Đã chọn" : "Đặt hàng";
-    // console.log(newItems);
-    // const list = {
-    //     ...newList,
-    //     ...newItems,
-    // };
-
-    // work r kìa
-    // ô giải thích cho filter hộ đc ko ?
-
-    // thử 0i 0c ch[a]
-    // newList[id] = {
-    //     ...newList[id],
-    //     // button : newList[id].button === "Đặt hàng" ? "Đã chọn" : "Đặt hàng",
-    // }
-
     setlistProduct(newList);    
   };
 
     const handleShowAllProduct = () => {
         setfilterProduct('all')
     }
-    const HạVi = () => {
+    const handleShowChoseProduct = () => {
         setfilterProduct("Đã chọn")
     }
     const handleShowLoseProduct = () => {
@@ -116,7 +87,7 @@ function ListProduct(props) {
         <Products listProduct={renderProduct} onTodoClick={handleTodoClick} />
 
         <button onClick={handleShowAllProduct}>Tất cả sản phẩm</button>
-        <button onClick={HạVi}>Sản phẩm đã chọn</button>
+        <button onClick={handleShowChoseProduct}>Sản phẩm đã chọn</button>
         <button onClick={handleShowLoseProduct}>Sản phẩm chưa chọn</button>
       </div>
     </div>

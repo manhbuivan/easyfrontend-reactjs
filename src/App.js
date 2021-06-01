@@ -3,6 +3,7 @@ import AlbumFeature from "./features/AlbumFeature";
 import ColorBox from "./features/ColorBox";
 import ListProduct from "./features/ListProduct";
 import TodoFeature from "./features/ToDoFeatured";
+import "./index.scss";
 
 function App() {
   return (
